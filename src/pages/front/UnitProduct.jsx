@@ -22,6 +22,21 @@ const UnitProduct = () => {
         })();
     },[]);
 
+    const postCart = async(qty) => {
+        const dataFormat = {
+            data:{
+                product_id:id,
+                qty,
+            }
+        }
+        try {
+            const res = await axios.post(`${baseUrl}/api/${apiPath}/cart`,dataFormat);
+            
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
     const backPage = () => {
         navigate(-1);
     }
@@ -37,7 +52,7 @@ const UnitProduct = () => {
                 <del className="d-block my-1 text-muted">特價：{unitProduct.origin_price}元</del>
                 <strong className="d-block my-1">特價：{unitProduct.price}元</strong>
                 <small className="d-block my-1">單位：{unitProduct.unit}</small>
-                <button type="button" className="btn btn-success">立即購買</button>
+                <button type="button" className="btn btn-success" onClick={()=>{postCart(1)}}>立即購買</button>
             </div>
         </div>
         <button type="button" className="btn btn-outline-danger mt-3" onClick={backPage}>回到上一頁</button>

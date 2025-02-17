@@ -3,7 +3,6 @@ import UserLayout from "../layout/UserLayout";
 import OrderManage from "../pages/admin/OrderManage";
 import ProductsManage from "../pages/admin/ProductsManage";
 import Carts from "../pages/front/Carts";
-import Home from "../pages/front/Home";
 import Login from "../pages/front/Login";
 import NotFound from "../pages/front/NotFound";
 import ProductsList from "../pages/front/ProductsList";
@@ -16,10 +15,6 @@ const routes = [
         path:'/',
         element:<UserLayout/>,
         children:[
-            {
-                path:'home',
-                element:<Home/>
-            },
             {
                 path:'products',
                 element:<ProductsList/>
