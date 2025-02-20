@@ -3,6 +3,7 @@ import axios from "axios";
 import { Outlet,NavLink } from "react-router";
 import { useEffect,useState} from "react";
 import { useNavigate } from "react-router";
+import Toasts from "../component/Toasts";
 
 const baseUrl = import.meta.env.VITE_BASE_URL;
 const apiPath = import.meta.env.VITE_API_PATH;
@@ -50,6 +51,7 @@ const AdminLayout = () => {
                 <button type="button" className='btn btn-danger mx-2' onClick={logout}>登出</button>
             </nav>
             <Outlet />
+            <Toasts/>
             </>)
         }
         
